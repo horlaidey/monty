@@ -36,8 +36,8 @@ typedef struct bus_s
 	FILE *file;
 	char *content;
 	int lifi;
-}  bus_t;
-extern bus_t bus;
+} bus_t;
+extern bus_t *bus;
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -53,6 +53,7 @@ typedef struct instruction_s
 } instruction_t;
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
+ssize_t getline(char **content, size_t *size, FILE *file);
 char  *clean_line(char *content);
 void func_push(stack_t **head, unsigned int number);
 void func_pall(stack_t **head, unsigned int number);
